@@ -1,0 +1,25 @@
+{
+  "name": "penpotapp",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Penpot",
+  "license": "ISC",
+  "description": "Penpot App",
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.penpotapp",
+    "productName": "Penpot App",
+    "win": {
+      "target": "nsis",
+      "icon": "logo.ico"
+    }
+  }
+}

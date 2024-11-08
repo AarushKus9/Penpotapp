@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penpot App</title>
+  <style>
+    /* Reset body margins and padding */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevent scrollbars on the main window */
+    }
+
+    /* Custom Title Bar */
+    #title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #282c34;
+      padding: 5px 10px;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      -webkit-app-region: drag; /* Makes title bar draggable */
+      height: 30px;
+    }
+
+    /* Window Controls */
+    #window-controls {
+      display: flex;
+    }
+
+    /* Custom Control Button Style */
+    .window-button {
+      width: 16px;
+      height: 16px;
+      margin-left: 10px;
+      background-color: #444;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      -webkit-app-region: no-drag; /* Allows buttons to be clickable */
+    }
+
+    /* Hover and Color Customization */
+    .window-button:hover {
+      background-color: #666;
+    }
+
+    .minimize {
+      background-color: #ffd966;
+    }
+
+    .maximize {
+      background-color: #8fce00;
+    }
+
+    .close {
+      background-color: #ff5c5c;
+    }
+
+    /* Full-screen iframe without borders or padding */
+    iframe {
+      width: 100vw;
+      height: calc(100vh - 30px); /* Adjust height to account for custom title bar */
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="title-bar">
+    <span>Penpot App</span>
+    <div id="window-controls">
+      <!-- Custom Buttons for Minimize, Maximize, and Close -->
+      <div class="window-button minimize" onclick="window.electron.minimize()"></div>
+      <div class="window-button maximize" onclick="window.electron.maximize()"></div>
+      <div class="window-button close" onclick="window.electron.close()"></div>
+    </div>
+  </div>
+  <iframe src="https://penpot.app"></iframe>
+</body>
+</html>
